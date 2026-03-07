@@ -676,6 +676,11 @@
   "start_core.multiblock.frame.frame_boost": "§aFrame Modifier %s%%",
   "start_core.multiblock.frame.boosted_eu_out": "§eBoosted EU Out: §c%s EU/t",
 
+  "block.start_core.modular_auto_scaling_node": "Modular Auto Scaling Conduit Node",
+  "block.start_core.modular_auto_scaling_terminal": "Modular Auto Scaling Conduit Terminal",
+  "modular.start_core.scaled_voltage": "Scaled Voltage: %s",
+  "modular.start_core.scaled_amperage": "Scaled Amperage: %s",
+  "modular.start_core.no_scaling": "No Energy Scaling Applied",
   "modular.start_core.no_link": "No established Modular-Link",
   "modular.start_core.has_link": "Modular-Link established",
   "modular.start_core.supported_list_title": "Supported Modules:",
