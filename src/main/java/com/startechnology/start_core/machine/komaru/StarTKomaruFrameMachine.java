@@ -37,6 +37,7 @@ import lombok.Getter;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler.FluidAction;
@@ -198,10 +199,7 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
         if (!stabilizationPaid || currentC <= 0) {
             return ModifierFunction.cancel(Component.translatable("start_core.machine.komaru.stabilization_unpaid"));
         }
-
-        return ModifierFunction.builder()
-                .eutMultiplier(currentC / 6.0)
-                .build();
+        return ModifierFunction.builder().eutMultiplier(currentC / 11.0).build();
     }
 
     private boolean canModuleTick(IWorkableMultiController controller) {
@@ -349,33 +347,26 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
     }
 
     private static class KomaruMath {
-        public static final double PHI = (1 + Math.sqrt(5)) / 2;
-        private static final double LOG_2 = Math.log(2.0);
-
-        private static double moduleScaling(int filamentTier, int basicModules, int advancedModules) {
-            return Math.pow(1.05 - 0.0075 * filamentTier, basicModules)
-                    * Math.pow(1.10 - 0.015 * filamentTier, advancedModules);
+        private static double moduleScaling(int basicModules, int advancedModules) {
+            return Math.pow(0.99, basicModules) * Math.pow(0.98, advancedModules);
         }
 
-        private static double filamentStabilizing(int availableFilament) {
-            return availableFilament <= 0
-                    ? Double.POSITIVE_INFINITY
-                    : 1.0 - (Math.log(PHI * availableFilament / 100.0) / LOG_2) / 10.0;
+        private static double filamentStabilizing(int filamentTier, int availableFilament) {
+            return Math.pow(1.0 - 0.025 * filamentTier, availableFilament * 0.2);
         }
 
-        private static double faeScaling(int basicModules, int advancedModules, double requiredFaeMatter) {
-            int modules = basicModules + advancedModules;
-            return modules <= 0
-                    ? 1.0
-                    : Math.pow(1 + Math.sqrt(requiredFaeMatter / 3.0) / (10.0 * modules), modules);
+        private static double faeScaling(int basicModules, int advancedModules) {
+            var weightedModules = basicModules + 3 * advancedModules;
+            return Math.pow(1.025, weightedModules);
         }
 
         private static double consumption(int filamentTier, int availableFilament, int basicModules,
                                           int advancedModules, double requiredFaeMatter) {
-            return 3.0 * Math.max(1.0, Math.min(40.0,
-                    moduleScaling(filamentTier, basicModules, advancedModules)
-                            * filamentStabilizing(availableFilament)
-                            * faeScaling(basicModules, advancedModules, requiredFaeMatter)));
+            var consumption = requiredFaeMatter
+                    * moduleScaling(basicModules, advancedModules)
+                    * filamentStabilizing(filamentTier, availableFilament)
+                    * faeScaling(basicModules, advancedModules);
+            return Mth.clamp(consumption, 10.0, 50.0);
         }
     }
 
@@ -397,7 +388,7 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
         }
 
         FilamentStats availableFilaments = findFilaments(false);
-        double nextFaeScaling = KomaruMath.faeScaling(basicModules, advancedModules, previousCycleC);
+        double nextFaeScaling = KomaruMath.faeScaling(basicModules, advancedModules);
         double nextC = KomaruMath.consumption(availableFilaments.tierOffset(), availableFilaments.count(),
                 basicModules, advancedModules, previousCycleC);
         int faematterRequired = (int) Math.ceil(nextC * 1000.0);
