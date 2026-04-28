@@ -1,5 +1,6 @@
 {
   "block.start_core.hpca_nanofluidic_heat_sink_component": "HPCA 나노유체 방열판 부품",
+  "block.start_core.hpca_optimized_computation_component": "HPCA 최적화된 연산 부품",
   "item.start_core.data_dna_disk.tooltip": "§7생명에 관한 정보를 담고 있습니다",
   "item.start_core.data_dna_disk": "§dDNA 데이터 디스크",
   "item.start_core.component_data_core.tooltip": "§7초월한 데이터",
@@ -38,7 +39,10 @@
   "behaviour.start_core.bacteria.harvester_tertiary_output": "§7실질적인 세 번째 출력물의 생산량은 §6250mB * 생산력§7입니다.",
 
   "behaviour.start_core.bacteria.super_output": "§5초유체 출력물",
-  "behaviour.start_core.bacteria.harvester_super_output": "§7실질적인 초유체 출력물의 생산량은 §61000mB * Production§7입니다.",
+  "behaviour.start_core.bacteria.harvester_super_output": "§7실질적인 초유체 출력물의 생산량은 §61000mB * 생산력§7입니다.",
+
+  "behaviour.start_core.bacteria.bacteria_output": "§5박테리아 출력물",
+  "behaviour.start_core.bacteria.harvester_bacteria_output": "§7실질적인 박테리아 액체 생산량은 §6500mB * 생산력§7입니다.",
 
   "behaviour.start_core.bacteria.no_stats": "§7능력치를 가지고 있는 박테리아",
   "behaviour.start_core.bacteria.stats_header": "§f박테리아 능력치:",
@@ -83,6 +87,7 @@
   "block.start_core.hv0": "§e탄화수소 수집:",
   "block.start_core.hv1": "§7박테리아 군집의 자원을 추출합니다. 군집을 추출하면서 나오는 자원은 §5박테리아가 포함하고 있는 자원§7에 기반해 만들어집니다.",
   "block.start_core.hv2": "§7소모량은 박테리아의 §f신진대사§7에 기반해 증가합니다.",
+  "block.start_core.hv3": "§7출력 유체는 기본적으로 박테리아의 §f생산력§7를 기반으로 하며, 박테리아의 여러 능력치에 따라 증가합니다.",
   "block.start_core.vat_description": "§7박테리아의 복제와 진화를 위해 특별히 디자인된 생체반응로입니다. 하나의 박테리아 샘플로 다양한 샘플 복제품과 변이된 변종을 만들어 실험 또는 산업 응용 분야에서 도움을 줍니다.",
   "block.start_core.vat1": "§e박테리아 번식:",
   "block.start_core.vat2": "§7박테리아 군집을 복제 및 변이시킵니다. 추출 또는 변이에 사용할 수 있는 많은 박테리아를 만듭니다.",
@@ -289,21 +294,32 @@
   "gtceu.recipe.category.hellforge_heating": "§6하데스의 용광로 데우기",
   "gtceu.hellforge": "§6지옥 제련소",
   "block.start_core.hellforge": "§6지옥 용광로",
-  "block.start_core.fornaxs_infernal_rotary_engine": "§6Fornaxs Infernal Rotary Engine",
-  "block.start_core.fornaxs_infernal_rotary_engine_rm": "Has §bThroughput Boosting§r and §eBatching",
-  "block.start_core.hellforge_added": "Has §bThroughput Boosting§r and §eBatching",
+  "block.start_core.fornaxs_infernal_rotary_engine": "§b포르낙스 인페르널 화전 엔진",
+  "block.start_core.fornaxs_infernal_rotary_engine_rm": "§b처리량 처리§r와 §e배치 처리§r를 가지고 있습니다.",
+  "block.start_core.fornaxs_infernal_rotary_engine_line": "§3§l영혼불의 군주",
+  "block.start_core.fornaxs_infernal_rotary_engine_description": "§7불꽃의 영혼을 흡수하여 지옥같은 분노를 불태우는 고귀한 용광로로, 분노를 깨우기 위한 액체 형태의 연료가 필요합니다.",
+  "block.start_core.fornaxs_infernal_rotary_engine_d0": "§9하데스의 용광로:",
+  "block.start_core.fornaxs_infernal_rotary_engine_d1": "§7이 특수한 엔진은 용광로를 이용해 극한의 온도에서 재료를 합금으로 제작합니다, 하지만 영혼불은 도가니의 온도를 최대 §b925MK§7까지만 올릴 수 있습니다.",
+  "block.start_core.fornaxs_infernal_rotary_engine_d2": "§7엔진에 다양한 §d액체 연료§7를 줘 영혼불의 한계를 뛰어넘을 수 있습니다. 각 액체 연료는 용광로를 가열 가능한 최대 온도가 정해져 있습니다.",
+  "block.start_core.fornaxs_infernal_rotary_engine_d9": "§7\"제작법 검색\"시에 이 가열용 액체 제작법은 다른 제작법보다 우선시됩니다.",
+  "block.start_core.fornaxs_infernal_rotary_engine_d3": "§7지옥 용광로는 언제나 10초 당 §93MK§7를 잃어버리며, 사용을 안 하고 있으면 추가로 10초 당 §972MK§7를 잃어버립니다",
+  "block.start_core.fornaxs_infernal_rotary_engine_d5": "§5지옥 병렬 처리:",
+  "block.start_core.fornaxs_infernal_rotary_engine_d6": "§7제작에 필요한 온도 요구량보다 온도가 §dn * 450MK§7 높을 때 마다, 지옥 용광로가 절대 병렬 처리 2^n을 얻습니다.",
+  "ui.start_core.fornaxs_crucible": "§d용광로 온도: §b{0}MK",
+
+  "block.start_core.hellforge_added": "§b처리량 처리§r와 §e배치 처리§r를 가지고 있습니다.",
   "block.start_core.hellforge_multiblock_line": "§c§l지옥 제련의 영역",
   "block.start_core.hellforge_description": "§7불타는 지옥의 용광로로, 불타는 심장을 이용해 끊임없이 불길을 유지하지만, 그의 분노를 깨우기 위해선 §c제물§7이 요구됩니다.",
   "block.start_core.hellforge_d0": "§6하데스의 용광로:",
   "block.start_core.hellforge_d1": "§7지옥에서 온 이 용광로는 극한의 온도에서 강력한 합금을 만들어낼 수 있지만, 아이러니하게도 그 심장에서 뿜어져 나오는 불꽃은 정작 용광로 자체를 데우지 못합니다.",
   "block.start_core.hellforge_d2": "§7다양한 §c액체 연료§7를 지옥 용광로에 넣어 온도를 올리는 데 사용하세요. 각 액체는 용광로를 데우는데 한계치가 존재합니다.",
-  "block.start_core.hellforge_d9": "§7이 열을 사용하는 제작은 언제나 다른 제작보다 더 우선됩니다.",
+  "block.start_core.hellforge_d9": "§7§7\"제작법 검색\"시에 이 가열용 액체 제작법은 다른 제작법보다 우선시됩니다.",
   "block.start_core.hellforge_d3": "§7지옥 용광로는 언제나 10초 당 §95MK§7를 잃어버리며, 사용을 안 하고 있으면 추가로 10초 당 §9120MK§7를 잃어버립니다.",
   "block.start_core.hellforge_d5": "§6지옥 병렬 처리:",
   "block.start_core.hellforge_d6": "§7제작에 필요한 온도 요구량보다 온도가 §cn * 450MK§7 높을 때 마다, 지옥 용광로가 절대 병렬 처리 2^n을 얻습니다.",
   "machine.start_core.redstone_interfacing": "§6레드스톤 가변성 인터페이싱:",
   "block.start_core.hellforge_d8": "§7액체 연료의 최대 온도인 §fnMK의 백분율§7에 기반해 레드스톤 신호를 제공합니다.",
-  "block.start_core.hellforge_rm": "Has §eBatching",
+  "block.start_core.hellforge_rm": "§e배치 처리§r를 가지고 있습니다.",
   "ui.start_core.hellforge_crucible": "§6용광로 온도: §c{0}MK",
   "config.jade.plugin_start_core.hellforge_heat_info": "[Star Technology] 지옥 용광로 온도",
   "config.jade.plugin_start_core.abyssal_harvester_info": "[Star Technology] 심연 수집기 엔트로피",
@@ -333,8 +349,8 @@
   "start_core.recipe.max_saturation.0": "최대 포만감 없음",
   "gtceu.abyssal_harvester": "심연 수집",
 
-  "start_core.recipe.min_vacuum_amount": "부분 진공 요구됨 (§a%s%%)",
-  "start_core.recipe.min_vacuum_amount_full": "완전 진공 요구됨 (§2%s%%)",
+  "start_core.recipe.min_vacuum_amount": "부분 진공 요구됨 (§a%s%%§f)",
+  "start_core.recipe.min_vacuum_amount_full": "완전 진공 요구됨 (§2%s%%§f)",
   "start_core.machine.vacuum_pump.tooltip_cap": "§7용량: %s",
   "start_core.machine.vacuum_pump.tooltip_rate": "§7처리량: %s §7(/sec)",
   "block.start_core.uev_vacuum_pump": "§aUEV §r진공 펌프",
@@ -423,17 +439,15 @@
   "start_core.machine.threading_controller.threads_available": "%s §7스레드/초가 가능합니다",
   "config.jade.plugin_start_core.threading_recipes": "[Star Technology] 스레딩 레시피",
 
-  "block.start_core.test": "테스트 헬릭스",
   "block.start_core.uhv_overdrive_thread_helix": "에픽 가속 헬릭스",
-  "block.start_core.uxv_overdrive_thread_helix": "우월한 가속 헬릭스",
-  "block.start_core.max_overdrive_thread_helix": "전능한 가속 헬릭스",
+  "block.start_core.uiv_overdrive_thread_helix": "하이퍼 가속 헬릭스",
+  "block.start_core.opv_overdrive_thread_helix": "초월한 가속 헬릭스",
   "block.start_core.uhv_coprocessor_thread_helix": "에픽 병렬 헬릭스",
   "block.start_core.uiv_coprocessor_thread_helix": "하이퍼 병렬 헬릭스",
   "block.start_core.opv_coprocessor_thread_helix": "초월한 병렬 헬릭스",
   "block.start_core.uhv_weaving_thread_helix": "에픽 스레딩 헬릭스",
   "block.start_core.uiv_weaving_thread_helix": "하이퍼 스레딩 헬릭스",
   "block.start_core.opv_weaving_thread_helix": "초월한 스레딩 헬릭스",
-  "block.start_core.uv_supreme_thread_helix": "슈퍼 만능 헬릭스",
   "block.start_core.uev_supreme_thread_helix": "메가 만능 헬릭스",
   "block.start_core.uxv_supreme_thread_helix": "우월한 만능 헬릭스",
   "block.start_core.max_supreme_thread_helix": "전능한 만능 헬릭스",
@@ -569,8 +583,6 @@
   "variadic.start_core.indicator.vcrc.vac_to_capacity": "Vac%% 용량의 백분율",
   "variadic.start_core.description.vcrc.vac_to_capacity": "(현재 온도 / vac%%) * 15에서 0 ~ 15 중 설정된 값을 기준으로 신호 방출",
 
-  "start_core.added_by_tooltip": "§eAdded by Star Technology",
-
   "block.start_core.ev_solar_cell": "EV 태양광 셀",
   "block.start_core.iv_solar_cell": "IV 태양광 셀",
   "block.start_core.luv_solar_cell": "LuV 태양광 셀",
@@ -615,7 +627,5 @@
   "variadic.start_core.indicator.solar_machine": "%s K의 백분율",
   "variadic.start_core.description.solar_machine": "(현재 온도 / %s K) * 15에서 0 ~ 15 중 설정된 값을 기준으로 신호 방출",
 
-  "block.start_core.zpm_fluid_drilling_rig": "§c엘리트 액체 굴착기 III§r",
-
-  "start_core.added_by_tooltip": "§eAdded by Star Technology"
+  "block.start_core.zpm_fluid_drilling_rig": "§c엘리트 액체 굴착기 III§r"
 }
