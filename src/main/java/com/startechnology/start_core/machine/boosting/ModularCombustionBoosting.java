@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
 import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockDisplayText;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
+import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.startechnology.start_core.machine.modular.StarTModularInterfaceHatchPartMachine;
 import net.minecraft.ChatFormatting;
@@ -48,10 +49,10 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
     private Material LUBRICANT = GTMaterials.get("lubricant");
     private Material WS2_FLUID = GTMaterials.get("tungsten_disulfide");//t2 Lube
 
-    private Material T1COXIDIZER = GTMaterials.get("water"); //placeholder for WFNA
-    private Material T2COXIDIZER = GTMaterials.get("neon");  //placeholder for RFNA
-    private Material T1ROXIDIZER = GTMaterials.get("helium");  //placeholder for O2F2
-    private Material T2ROXIDIZER = GTMaterials.get("hydrogen"); //placeholder for FSB
+    private Material T1COXIDIZER = GTMaterials.get("white_fuming_nitric_acid");
+    private Material T2COXIDIZER = GTMaterials.get("red_fuming_nitric_acid");
+    private Material T1ROXIDIZER = GTMaterials.get("dioxygen_difluoride");
+    private Material T2ROXIDIZER = GTMaterials.get("ferrocenium_superoxide");
 
     public ModularCombustionBoosting(IMachineBlockEntity holder, int tier, ResourceLocation... acceptedFrameIds) {
         super(holder, tier);
@@ -78,9 +79,6 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
             }
         }
     }
-    private int getOxidizerConsumption() {
-        return (int)(Math.pow(4, tier - 1) * 4);
-    }
 
     private double getBoostingBonus() {
         return switch (this.tier){
@@ -98,10 +96,10 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
 
     private GTRecipe getActiveBoostingRecipe() {
         return switch (this.tier) {
-            case T1_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T1COXIDIZER.getFluid(getOxidizerConsumption())).buildRawRecipe();
-            case T2_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T2COXIDIZER.getFluid(getOxidizerConsumption())).buildRawRecipe();
-            case T3_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T1ROXIDIZER.getFluid(getOxidizerConsumption())).buildRawRecipe();
-            case T4_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T2ROXIDIZER.getFluid(getOxidizerConsumption())).buildRawRecipe();
+            case T1_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T1COXIDIZER.getFluid(324)).buildRawRecipe();
+            case T2_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T2COXIDIZER.getFluid(432)).buildRawRecipe();
+            case T3_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T1ROXIDIZER.getFluid(756)).buildRawRecipe();
+            case T4_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(T2ROXIDIZER.getFluid(864)).buildRawRecipe();
             default -> GTRecipeBuilder.ofRaw().buildRawRecipe();
         };
     }
@@ -121,6 +119,14 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
             case T1_COMBUSTION_MODULE, T2_COMBUSTION_MODULE, T3_COMBUSTION_MODULE, T4_COMBUSTION_MODULE -> isActiveBoosting ? 2 : 1;
             default -> 1;
         };
+    }
+    @Override
+    public String getRecipeFluidInputInfo() {
+        GTRecipe recipe = recipeLogic.getLastRecipe();
+        if (recipe == null) return null;
+        int baseFluid = RecipeHelper.getInputFluids(recipe).get(0).getAmount();
+        int displayAmount = isActiveBoosting ? baseFluid * 2 : baseFluid;
+        return ChatFormatting.RED + FormattingUtil.formatNumbers(displayAmount) + "mB";
     }
     //one could say Crazyman
     public ModifierFunction getModifierFunction(long recipeEUt) {
@@ -167,6 +173,8 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
                 GTRecipe activeBoosterRecipe  = getActiveBoostingRecipe();
                 this.isActiveBoosting = RecipeHelper.matchRecipe(this, activeBoosterRecipe).isSuccess() &&
                         RecipeHelper.handleRecipeIO(this, activeBoosterRecipe, IO.IN, this.recipeLogic.getChanceCaches()).isSuccess();
+            } else {
+                isActiveBoosting = false;
             }
         }
 
@@ -190,10 +198,17 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
             builder.addFuelNeededLine(this.getRecipeFluidInputInfo(), this.recipeLogic.getDuration());
         }
 
-        if (isFormed()) {
+        if (isFormed() && isActive()) {
             boolean oxidizerBoosted = RecipeHelper.matchRecipe(this, getActiveBoostingRecipe()).isSuccess();
             if (oxidizerBoosted) {
-                textList.add(Component.translatable("start_core.multiblock.boosted_combustion_oxidizer").withStyle(ChatFormatting.DARK_AQUA));
+                String key = switch (this.tier) {
+                    case T1_COMBUSTION_MODULE -> "start_core.multiblock.boosted_combustion_oxidizer_t1";
+                    case T2_COMBUSTION_MODULE -> "start_core.multiblock.boosted_combustion_oxidizer_t2";
+                    case T3_COMBUSTION_MODULE -> "start_core.multiblock.boosted_combustion_oxidizer_t3";
+                    case T4_COMBUSTION_MODULE -> "start_core.multiblock.boosted_combustion_oxidizer_t4";
+                    default -> "start_core.multiblock.boosted_combustion_oxidizer_t1";
+                };
+                textList.add(Component.translatable(key));
             }
         }
         builder.addWorkingStatusLine();

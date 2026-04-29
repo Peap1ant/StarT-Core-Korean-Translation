@@ -636,25 +636,28 @@
 
   "block.start_core.t1_combustion_module_description": "Unreal Chemical Combustion",
   "block.start_core.t1_combustion_module_d0": "§eBase Production: §r%s EU/t",
-  "block.start_core.t1_combustion_module_d1": "Uses §f%d mB/hr §7of §6Lubricant §7while working",
-  "block.start_core.t1_combustion_module_d2": "Supply §f80 mB/s§7 of an oxidizer to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
+  "block.start_core.t1_combustion_module_d1": "Uses §f%d B/hr §7of §6Lubricant §7while working",
+  "block.start_core.t1_combustion_module_d2": "Supply §f80 mB/s§7 of §bWhite Fuming Nitric Acid §7to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
 
   "block.start_core.t2_combustion_module_description": "Supreme Chemical Combustion",
   "block.start_core.t2_combustion_module_d0": "§eBase Production: §r%s EU/t",
-  "block.start_core.t2_combustion_module_d1": "Uses §f%d mB/hr §7of §6Lubricant §7while working",
-  "block.start_core.t2_combustion_module_d2": "Supply §f80 mB/s§7 of Oxygen to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
+  "block.start_core.t2_combustion_module_d1": "Uses §f%d B/hr §7of §6Lubricant §7while working",
+  "block.start_core.t2_combustion_module_d2": "Supply §f120 mB/s§7 of §bRed Fuming Nitric Acid §7to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
 
   "block.start_core.t1_rocket_module_description": "Supreme Rocket Combustion",
   "block.start_core.t1_rocket_module_d0": "§eBase Production: §r%s EU/t",
-  "block.start_core.t1_rocket_module_d1": "Uses §f%d mB/hr §7of §6Lubricant §7while working",
-  "block.start_core.t1_rocket_module_d2": "Supply §f80 mB/s§7 of an oxidizer to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
+  "block.start_core.t1_rocket_module_d1": "Uses §f%d B/hr §7of §6Tungsten Disulfide §7while working",
+  "block.start_core.t1_rocket_module_d2": "Supply §f210 mB/s§7 of §bDioxygen Difluoride §7to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
 
   "block.start_core.t2_rocket_module_description": "Nyinsane Rocket Combustion",
   "block.start_core.t2_rocket_module_d0": "§eBase Production: §r%s EU/t",
-  "block.start_core.t2_rocket_module_d1": "Uses §f%d mB/hr §7of §6Lubricant §7while working",
-  "block.start_core.t2_rocket_module_d2": "Supply §f80 mB/s§7 of an oxidizer to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
+  "block.start_core.t2_rocket_module_d1": "Uses §f%d B/hr §7of §6Tungsten Disulfide §7while working",
+  "block.start_core.t2_rocket_module_d2": "Supply §f240 mB/s§7 of §bFerrocenium Superoxide §7to produce up to §f%s EU/t§7 at §f2x§7 fuel consumption.",
 
-  "start_core.multiblock.boosted_combustion_oxidizer": "Oxidizer Boosted",
+  "start_core.multiblock.boosted_combustion_oxidizer_t1": "§bWhite Fuming Nitric Acid boosted",
+  "start_core.multiblock.boosted_combustion_oxidizer_t2": "§bRed Fuming Nitric Acid boosted",
+  "start_core.multiblock.boosted_combustion_oxidizer_t3": "§bDioxygen Difluoride boosted",
+  "start_core.multiblock.boosted_combustion_oxidizer_t4": "§bFerrocenium Superoxide boosted",
 
   "start_core.multiblock.frame.linked_modules": "Linked Modules: %s",
 
