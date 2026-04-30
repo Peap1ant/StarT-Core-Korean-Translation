@@ -292,7 +292,8 @@ public class StarTFusionMachines {
                             Component.empty(),
                             Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.specific",
                                 GTValues.VN[tier], ReflectorFusionReactorMachine.calculateEnergyStorageFactor(tier, 1) / 1000000L
-                            )
+                            ),
+                            Component.translatable("block.start_core.breaker_line")
                         )
                     )
                 );

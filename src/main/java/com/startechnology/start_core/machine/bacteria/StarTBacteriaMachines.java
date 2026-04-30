@@ -40,7 +40,8 @@ public class StarTBacteriaMachines {
                     Component.empty(),
                     Component.translatable("block.start_core.vat3"),
                     Component.empty(),
-                    Component.translatable("block.start_core.vat4")
+                    Component.translatable("block.start_core.vat4"),
+                    Component.translatable("block.start_core.breaker_line")
                 )
             )
         )
@@ -91,8 +92,7 @@ public class StarTBacteriaMachines {
             Component.translatable("block.start_core.rm1"),
             Component.translatable("block.start_core.breaker_line"),
             Component.translatable("block.start_core.rm3"),
-            Component.translatable("block.start_core.rm4"),
-            Component.translatable("block.start_core.breaker_line")
+            Component.translatable("block.start_core.rm4")
         )
         .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
         .rotationState(RotationState.NON_Y_AXIS)
@@ -147,7 +147,8 @@ public class StarTBacteriaMachines {
                     Component.empty(),
                     Component.translatable("block.start_core.hv2"),
                     Component.empty(),
-                    Component.translatable("block.start_core.hv3")
+                    Component.translatable("block.start_core.hv3"),
+                    Component.translatable("block.start_core.breaker_line")
                 )
             )
         )
