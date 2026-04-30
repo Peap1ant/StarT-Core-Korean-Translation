@@ -3,5 +3,15 @@
   "tagprefix.foil_ream": "%s Foil Ream",
   "tagprefix.wire_spool": "%s Wire Spool",
   "tagprefix.ultradense_plate": "%s Ultradense Plate",
-  "tagprefix.ball_bearing": "%s Ball Bearing"
+  "tagprefix.ball_bearing": "%s Ball Bearing",
+  "gtceu.modifier.absolute_parallel.name": "%sAbsolute Parallel Hatch:",
+  "grceu.modifier.absolute_parallel.description.0": "  §7Enables the use of absolute parallel hatches",
+  "grceu.modifier.absolute_parallel.description.1": "  §7Which runs the recipe X amount of times without any penalties",
+  "gtceu.modifier.bulk_processing.name": "%sBulk Processing:",
+  "grceu.modifier.bulk_processing.description.0": "  §7If the machine has enough inputs to run at least 16 parallels,",
+  "grceu.modifier.bulk_processing.description.1": "  §7it will run only at 13x the duration",
+  "grceu.modifier.bulk_processing.description.2": "  7Will not bulk if it does not have enough inputs",
+  "gtceu.modifier.throughput_boosting.name": "%sThroughput Boosting:",
+  "grceu.modifier.throughput_boosting.description.0": "  §7The machine can run by default with 4 parallels",
+  "grceu.modifier.throughput_boosting.description.1": "  §7The duration of the recipe is increased 1.6x and EU/t 0.95x"
 }
