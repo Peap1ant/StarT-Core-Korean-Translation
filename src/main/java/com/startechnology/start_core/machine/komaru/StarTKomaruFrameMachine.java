@@ -51,8 +51,8 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
             StarTKomaruFrameMachine.class,
             WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER);
 
-    private static final ResourceLocation BASIC_MODULE_ID = GTCEu.id("basic_type_module");
-    private static final ResourceLocation ADVANCED_MODULE_ID = GTCEu.id("advanced_type_module");
+    private static final List<ResourceLocation> BASIC_MODULE_ID = new ArrayList<>();
+    private static final List<ResourceLocation> ADVANCED_MODULE_ID = new ArrayList<>();
     private static final ResourceLocation FAEMATTER_TAG_ID = StarTCore.resourceLocation("komaru/faematter");
     private static final Pattern FILAMENT_TAG_PATTERN = Pattern.compile("^start_core:komaru/filaments/tier_(\\d+)$");
 
@@ -226,7 +226,7 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
 
     private void setupTerminals() {
         for (StarTModularConduitAutoScalingHatchPartMachine basicTerminal : basicTerminals) {
-            basicTerminal.setSupportedModules(List.of(BASIC_MODULE_ID));
+            basicTerminal.setSupportedModules(BASIC_MODULE_ID);
             basicTerminal.resetSupportedModule();
             tryScaleTerminal(basicTerminal, false);
 
@@ -242,7 +242,7 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
         }
 
         for (StarTModularConduitAutoScalingHatchPartMachine advancedTerminal : advancedTerminals) {
-            advancedTerminal.setSupportedModules(List.of(ADVANCED_MODULE_ID));
+            advancedTerminal.setSupportedModules(ADVANCED_MODULE_ID);
             advancedTerminal.resetSupportedModule();
             tryScaleTerminal(advancedTerminal, true);
 
@@ -577,5 +577,17 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
 
     private boolean checkOffset(int ticks) {
         return getOffsetTimer() % ticks == 0;
+    }
+
+    public static void addModule(String resourceLocation, String moduleType) {
+        ResourceLocation parsedResourceLocation = ResourceLocation.tryParse(resourceLocation);
+
+        if (parsedResourceLocation != null) {
+            if (moduleType.equalsIgnoreCase("basic")) {
+                BASIC_MODULE_ID.add(parsedResourceLocation);
+            } else if (moduleType.equalsIgnoreCase("advanced")) {
+                ADVANCED_MODULE_ID.add(parsedResourceLocation);
+            }
+        }
     }
 }
