@@ -284,13 +284,15 @@ public class StarTFusionMachines {
                 )
                 .paginatedTooltips(
                     List.of(
-                        Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.fusion_info"),
-                        Component.translatable("gtceu.machine.fusion_reactor.capacity",
-                            ReflectorFusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
-                        Component.translatable("start_core.machine.fusion_reactor.overclocking"),
-                        Component.empty(),
-                        Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.specific",
-                            GTValues.VN[tier], ReflectorFusionReactorMachine.calculateEnergyStorageFactor(tier, 1) / 1000000L
+                        List.of(
+                            Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.fusion_info"),
+                            Component.translatable("gtceu.machine.fusion_reactor.capacity",
+                                ReflectorFusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
+                            Component.translatable("start_core.machine.fusion_reactor.overclocking"),
+                            Component.empty(),
+                            Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.specific",
+                                GTValues.VN[tier], ReflectorFusionReactorMachine.calculateEnergyStorageFactor(tier, 1) / 1000000L
+                            )
                         )
                     )
                 );
