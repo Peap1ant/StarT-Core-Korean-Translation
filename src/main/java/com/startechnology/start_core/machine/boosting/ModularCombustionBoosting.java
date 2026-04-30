@@ -89,10 +89,6 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
             default -> 1;
         };
     }
-    @Override
-    protected @NotNull GTRecipe getLubricantRecipe() {
-        return getAvailableLubricant();
-    }
 
     private GTRecipe getActiveBoostingRecipe() {
         return switch (this.tier) {
@@ -104,7 +100,8 @@ public class ModularCombustionBoosting extends LargeCombustionEngineMachine {
         };
     }
 
-    private GTRecipe getAvailableLubricant() {
+    @Override
+    protected @NotNull GTRecipe getLubricantRecipe() {
         return switch (this.tier) {
             case T1_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(LUBRICANT.getFluid(100)).buildRawRecipe();
             case T2_COMBUSTION_MODULE -> GTRecipeBuilder.ofRaw().inputFluids(LUBRICANT.getFluid(200)).buildRawRecipe();

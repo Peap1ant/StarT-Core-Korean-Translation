@@ -672,7 +672,7 @@
   "block.start_core.modular_combustion_frame_d3": "§cModular Frame: §7Place the Module so its §fTerminal Hatch §7faces directly into a §fNode Hatch §7on the Multiblock. The §fTerminal Hatch §7UI will show whether the connection is active and which Multiblock this Module connects to. The §fFrame §7enables all §fModule Machines §7attached to it.",
   "block.start_core.modular_combustion_frame_tooltip_laser": "Can use §dLaser Hatches",
 
-  "start_core.multiblock.frame.avg_eu_in": "§eAvg EU In: §a%s EU/t",
+  "start_core.multiblock.frame.avg_eu_in": "§eAverage EU In: §a%s EU/t",
   "start_core.multiblock.frame.frame_boost": "§aFrame Modifier %s%%",
   "start_core.multiblock.frame.boosted_eu_out": "§eBoosted EU Out: §c%s EU/t",
 
