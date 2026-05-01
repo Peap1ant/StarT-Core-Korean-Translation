@@ -26,7 +26,7 @@ import org.lwjgl.opengl.GL30;
 import java.util.ArrayList;
 import java.util.List;
 
-// @Mod.EventBusSubscriber(modid = StarTCore.MOD_ID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = StarTCore.MOD_ID, value = Dist.CLIENT)
 public final class HookLevelRenderer {
 
     public static List<StarTKomaruFrameMachine> COLLECTED_RENDERS = new ArrayList<>();
@@ -60,7 +60,8 @@ public final class HookLevelRenderer {
 
     public static final PostEffect KOMARU_POST_EFFECT = new PostEffect(new ResourceLocation("start_core", "komaru")) {
         public boolean isEnabled() {
-            return super.isEnabled() && !Minecraft.useShaderTransparency();
+            // return super.isEnabled() && !Minecraft.useShaderTransparency();
+            return false;
         }
 
         @Override
@@ -167,7 +168,8 @@ public final class HookLevelRenderer {
 
     public static final PostEffect KOMARU_FANCY_POST_EFFECT = new PostEffect(new ResourceLocation("start_core", "komaru_fancy")) {
         public boolean isEnabled() {
-            return super.isEnabled() && Minecraft.useShaderTransparency();
+            // return super.isEnabled() && Minecraft.useShaderTransparency();
+            return false;
         }
 
         @Override
@@ -218,7 +220,7 @@ public final class HookLevelRenderer {
         return new Vector3f(centerX, centerY, centerZ);
     }
 
-    @SubscribeEvent
+    // @SubscribeEvent
     public static void onRenderLevelStageEvent(RenderLevelStageEvent event) {
         if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) onRenderAfterParticles(event);
     }
@@ -240,56 +242,4 @@ public final class HookLevelRenderer {
         instance.safeGetUniform("GameTime").set(RenderSystem.getShaderGameTime());
     }
 
-    private static void fillCommonShaderUniforms(ShaderInstance instance, PoseStack poseStack, Matrix4f projectionMatrix) {
-        var mc = Minecraft.getInstance();
-        var renderTarget = mc.getMainRenderTarget();
-        var invProjectionMatrix = new Matrix4f(projectionMatrix).invert();
-        var camera = mc.gameRenderer.getMainCamera();
-        var cameraPosition = camera.getPosition().toVector3f();
-
-        instance.safeGetUniform("CameraNearPlane").set(0.05F);
-        instance.safeGetUniform("CameraFarPlane").set(mc.gameRenderer.getDepthFar());
-        instance.safeGetUniform("CameraPosition").set(cameraPosition);
-        instance.safeGetUniform("ViewResolution").set((float) renderTarget.viewWidth, (float) renderTarget.viewHeight);
-        instance.safeGetUniform("InvProjMat").set(invProjectionMatrix);
-
-        if (instance.MODEL_VIEW_MATRIX != null) {
-            instance.MODEL_VIEW_MATRIX.set(poseStack.last().pose());
-        }
-        if (instance.PROJECTION_MATRIX != null) {
-            instance.PROJECTION_MATRIX.set(projectionMatrix);
-        }
-        if (instance.INVERSE_VIEW_ROTATION_MATRIX != null) {
-            instance.INVERSE_VIEW_ROTATION_MATRIX.set(RenderSystem.getInverseViewRotationMatrix());
-        }
-        if (instance.COLOR_MODULATOR != null) {
-            instance.COLOR_MODULATOR.set(RenderSystem.getShaderColor());
-        }
-        if (instance.GLINT_ALPHA != null) {
-            instance.GLINT_ALPHA.set(RenderSystem.getShaderGlintAlpha());
-        }
-        if (instance.FOG_START != null) {
-            instance.FOG_START.set(RenderSystem.getShaderFogStart());
-        }
-        if (instance.FOG_END != null) {
-            instance.FOG_END.set(RenderSystem.getShaderFogEnd());
-        }
-        if (instance.FOG_COLOR != null) {
-            instance.FOG_COLOR.set(RenderSystem.getShaderFogColor());
-        }
-        if (instance.FOG_SHAPE != null) {
-            instance.FOG_SHAPE.set(RenderSystem.getShaderFogShape().getIndex());
-        }
-        if (instance.TEXTURE_MATRIX != null) {
-            instance.TEXTURE_MATRIX.set(RenderSystem.getTextureMatrix());
-        }
-        if (instance.GAME_TIME != null) {
-            instance.GAME_TIME.set(RenderSystem.getShaderGameTime());
-        }
-        RenderSystem.setupShaderLights(instance);
-    }
-
-    // animationType is 0 when opening, 1 when idle, 2 when closing
-    record KomaruRendererData(StarTKomaruFrameMachine machine, int animationTicks, int animationType) {
-    }
 }
