@@ -174,7 +174,7 @@ float mapValue(float value, float min1, float max1, float min2, float max2) {
 
 vec2 map(vec3 p) {
     float realTime = float(AnimationTicks) / 20. + Time;
-    float rayAnimationProgress = mapValue(realTime, 0.0, 2.5, 0.0, 1.0);
+    float rayAnimationProgress = mapValue(realTime, 0.0, 2.5, AnimationType == 1 ? 0.0 : 1.0, AnimationType == 1 ? 1.0 : 0.0);
 
     float sdf1H = 23. - 5.;
     vec3 sdf1Pos = BeamOrigin + vec3(0, 5, 0);
@@ -187,13 +187,13 @@ vec2 map(vec3 p) {
     vec3 sdf3Pos = BeamOrigin + vec3(0, 23, 0);
     vec2 sdf3 = vec2(sdRoundCone(p - sdf3Pos, 3. / 2., 2.3 / 2., sdf3H), 1);
 
-    float sdf4H = 133. - 36. - 3.;
+    float sdf4H = mapValue(rayAnimationProgress, 0.0, 0.75, 0.0, 133. - 36. - 3.);
     vec3 sdf4Pos = BeamOrigin + vec3(0, 36. + 3., 0);
     vec2 sdf4 = vec2(sdVerticalCapsule(p - sdf4Pos, sdf4H, 2.3 / 2.), 1);
 
-    float sphereY = mapValue(rayAnimationProgress, 0.0, 1.0, 36. + 3., 133.);
+    float sphereY = mapValue(rayAnimationProgress, 0.0, 0.75, 36. + 3., 133.);
     vec3 sdf5Pos = BeamOrigin + vec3(0, sphereY, 0);
-    float sphereRadius = mapValue(rayAnimationProgress, 0.0, 1.0, 2, 19.0);
+    float sphereRadius = mapValue(rayAnimationProgress, 0.5, 1.0, 2, 19.0);
     vec2 sdf5 = vec2(sdSphere(p - sdf5Pos, sphereRadius), 2);
 
     vec2 res = opSmoothUnion(0.5, sdf1,
@@ -347,8 +347,9 @@ void komaruMain(in float solidDepth, out vec4 color, out vec3 normal, out float 
 
     float realTime = float(AnimationTicks) / 20. + Time;
 
-    float sphereRadiusPerc = mapValue(realTime, 2.5, 5.0, 0.0, 1.0);
-    float sphereRadius = AnimationType == 1 ? mapValue(exponentialOut(sphereRadiusPerc), 0.0, 1.0, 0.1, 17.0) : mapValue(exponentialOut(sphereRadiusPerc), 0.0, 1.0, 17.0, 0.1);
+    float sphereRadius = AnimationType == 1 ?
+        mapValue(exponentialOut(mapValue(realTime, 2.5, 5.0, 0.0, 1.0)), 0.0, 1.0, 0.0, 17.0) :
+        mapValue(exponentialOut(mapValue(realTime, 0.0, 2.5, 0.0, 1.0)), 0.0, 1.0, 17.0, 0.0);
 
     // BALL
     vec2 disk = sphIntersect(ro, rd, BeamOrigin + vec3(0, 133, 0), sphereRadius);

@@ -26,7 +26,7 @@ import org.lwjgl.opengl.GL30;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = StarTCore.MOD_ID, value = Dist.CLIENT)
+// @Mod.EventBusSubscriber(modid = StarTCore.MOD_ID, value = Dist.CLIENT)
 public final class HookLevelRenderer {
 
     public static List<StarTKomaruFrameMachine> COLLECTED_RENDERS = new ArrayList<>();

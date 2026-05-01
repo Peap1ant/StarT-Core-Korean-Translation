@@ -49,7 +49,7 @@ public class KomaruRenderer extends DynamicRender<StarTKomaruFrameMachine, Komar
             // not active, no need to render
             return;
         }
-        HookLevelRenderer.COLLECTED_RENDERS.add(machine);
+        // HookLevelRenderer.COLLECTED_RENDERS.add(machine);
     }
 
     @Override
