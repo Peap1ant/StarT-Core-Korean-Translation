@@ -1,3 +1,7 @@
 {
-    "tagprefix.dust_block": "%s 가루 블록"
+  "tagprefix.dust_block": "%s 가루 블록",
+  "tagprefix.foil_ream": "%s 포일",
+  "tagprefix.wire_spool": "%s 와이어 스풀",
+  "tagprefix.ultradense_plate": "%s 단단한 판",
+  "tagprefix.ball_bearing": "%s 볼 베어링"
 }
