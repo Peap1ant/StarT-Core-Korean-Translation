@@ -26,6 +26,28 @@ public class StarTAbyssalharvesterMachines {
         .multiblock("abyssal_harvester", StarTAbyssalHarvesterMachine::new)
         .appearanceBlock(() -> StarTMachineUtils.getKjsBlock(("draneko_casing")))
         .langValue("Abyssal Harvester")
+        .tooltips(
+            Component.translatable("start_core.machine.abyssal_harvester.line"),
+            Component.translatable("start_core.machine.abyssal_harvester.description"),
+            Component.translatable("block.start_core.breaker_line")
+        )
+        .paginatedTooltips(
+            List.of(
+                List.of(
+                    Component.translatable("start_core.machine.abyssal_harvester.ah0"),
+                    Component.translatable("start_core.machine.abyssal_harvester.ah1"),
+                    Component.translatable("start_core.machine.abyssal_harvester.ah2"),
+                    Component.translatable("start_core.machine.abyssal_harvester.ah3")
+                ),
+                List.of(
+                    Component.translatable("start_core.machine.abyssal_harvester.ah4"),
+                    Component.translatable("start_core.machine.abyssal_harvester.ah5"),
+                    Component.translatable("block.start_core.breaker_line"),
+                    Component.translatable("machine.start_core.redstone_interfacing"),
+                    Component.translatable("start_core.machine.abyssal_harvester.ah6")
+                )
+            )
+        )
         .recipeTypes(StarTRecipeTypes.ABYSSAL_HARVESTER_RECIPES)
         .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT_SUBTICK, StarTAbyssalHarvesterMachine::recipeModifier, GTRecipeModifiers.BATCH_MODE)
         .pattern(definition -> FactoryBlockPattern.start()
@@ -61,30 +83,6 @@ public class StarTAbyssalharvesterMachines {
             // .where('I', Predicates.abilities(PartAbility.IMPORT_FLUIDS)
             //     .or(Predicates.abilities(PartAbility.IMPORT_ITEMS)))
             .build()
-        )
-        .tooltips(
-            Component.translatable("start_core.machine.abyssal_harvester.line"),
-            Component.translatable("start_core.machine.abyssal_harvester.description"),
-            Component.translatable("block.start_core.breaker_line")
-        )
-        .paginatedTooltips(
-            List.of(
-                Component.translatable("start_core.machine.abyssal_harvester.ah0"),
-                Component.translatable("start_core.machine.abyssal_harvester.ah1"),
-                Component.translatable("start_core.machine.abyssal_harvester.ah2"),
-                Component.translatable("start_core.machine.abyssal_harvester.ah3")
-            ),
-            List.of(
-                Component.translatable("start_core.machine.abyssal_harvester.ah4"),
-                Component.translatable("start_core.machine.abyssal_harvester.ah5"),
-                Component.translatable("block.start_core.breaker_line"),
-                Component.translatable("machine.start_core.redstone_interfacing"),
-                Component.translatable("start_core.machine.abyssal_harvester.ah6")
-            )
-        )
-        .bottomTooltips(
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("block.start_core.parallels")
         )
         .workableCasingModel(KubeJS.id("block/casings/end_multis/draneko_casing"),
             GTCEu.id("block/machines/alloy_smelter"))

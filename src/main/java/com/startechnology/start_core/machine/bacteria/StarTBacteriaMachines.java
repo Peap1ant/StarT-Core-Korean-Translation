@@ -18,6 +18,8 @@ import com.startechnology.start_core.recipe.StarTRecipeTypes;
 import dev.latvian.mods.kubejs.KubeJS;
 import net.minecraft.network.chat.Component;
 
+import java.util.List;
+
 import static com.startechnology.start_core.StarTCore.START_REGISTRATE;
 
 public class StarTBacteriaMachines {
@@ -28,15 +30,20 @@ public class StarTBacteriaMachines {
         .tooltips(
             Component.translatable("block.start_core.bacteria_multiblock_line"),
             Component.translatable("block.start_core.vat_description"),
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("block.start_core.vat1"),
-            Component.translatable("block.start_core.vat2"),
-            Component.translatable("block.start_core.gap"),
-            Component.translatable("block.start_core.vat3"),
-            Component.translatable("block.start_core.gap"),
-            Component.translatable("block.start_core.vat4"),
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("block.start_core.parallels")
+            Component.translatable("block.start_core.breaker_line")
+        )
+        .paginatedTooltips(
+            List.of(
+                List.of(
+                    Component.translatable("block.start_core.vat1"),
+                    Component.translatable("block.start_core.vat2"),
+                    Component.empty(),
+                    Component.translatable("block.start_core.vat3"),
+                    Component.empty(),
+                    Component.translatable("block.start_core.vat4"),
+                    Component.translatable("block.start_core.breaker_line")
+                )
+            )
         )
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT, GTRecipeModifiers.BATCH_MODE)
@@ -85,8 +92,7 @@ public class StarTBacteriaMachines {
             Component.translatable("block.start_core.rm1"),
             Component.translatable("block.start_core.breaker_line"),
             Component.translatable("block.start_core.rm3"),
-            Component.translatable("block.start_core.rm4"),
-            Component.translatable("block.start_core.breaker_line")
+            Component.translatable("block.start_core.rm4")
         )
         .recipeModifiers(GTRecipeModifiers.OC_NON_PERFECT)
         .rotationState(RotationState.NON_Y_AXIS)
@@ -113,9 +119,9 @@ public class StarTBacteriaMachines {
             .where("D", Predicates.blocks(ChemicalHelper.getBlock(TagPrefix.frameGt, GTCEuAPI.materialManager.getMaterial("gtceu:trinaquadalloy"))))
             .where("E", Predicates.blocks(GTBlocks.COMPUTER_CASING.get()))
             .where("F", Predicates.blocks(GTBlocks.ADVANCED_COMPUTER_CASING.get())
-                    .setMinGlobalLimited(25)
-                    .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                    .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                .setMinGlobalLimited(25)
+                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
             .where("G", Predicates.blocks(GTBlocks.FUSION_GLASS.get()))
             .where("H", Predicates.blocks(GTBlocks.COMPUTER_HEAT_VENT.get()))
             .where("@", Predicates.controller(Predicates.blocks(definition.get())))
@@ -131,15 +137,20 @@ public class StarTBacteriaMachines {
         .tooltips(
             Component.translatable("block.start_core.bacteria_multiblock_line"),
             Component.translatable("block.start_core.harvester_description"),
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("block.start_core.hv0"),
-            Component.translatable("block.start_core.hv1"),
-            Component.translatable("block.start_core.gap"),
-            Component.translatable("block.start_core.hv2"),
-            Component.translatable("block.start_core.gap"),
-            Component.translatable("block.start_core.hv3"),
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("block.start_core.parallels")
+            Component.translatable("block.start_core.breaker_line")
+        )
+        .paginatedTooltips(
+            List.of(
+                List.of(
+                    Component.translatable("block.start_core.hv0"),
+                    Component.translatable("block.start_core.hv1"),
+                    Component.empty(),
+                    Component.translatable("block.start_core.hv2"),
+                    Component.empty(),
+                    Component.translatable("block.start_core.hv3"),
+                    Component.translatable("block.start_core.breaker_line")
+                )
+            )
         )
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeModifiers(GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT, GTRecipeModifiers.BATCH_MODE)
