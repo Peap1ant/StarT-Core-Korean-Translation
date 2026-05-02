@@ -204,13 +204,13 @@ public class StarTSolarMachines {
             Component.translatable("solar.start_core.solar_machine.tooltip1"),
             Component.translatable("solar.start_core.solar_machine.tooltip2"),
             Component.translatable("solar.start_core.solar_machine.tooltip3"),
+            Component.translatable("block.start_core.gap"),
+            Component.translatable("solar.start_core.solar_machine.tooltip7"),
             Component.translatable("block.start_core.breaker_line"),
             Component.translatable("solar.start_core.solar_machine.tooltip4", StarTSolarMachine.getOutputModifier(UV)),
             Component.translatable("solar.start_core.solar_machine.tooltip5"),
             Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("solar.start_core.solar_machine.tooltip6", "§71000", Component.translatable("material.gtceu.deionized_water")),
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("solar.start_core.solar_machine.tooltip7")
+            Component.translatable("solar.start_core.solar_machine.tooltip6", "§71000", Component.translatable("material.gtceu.deionized_water"))
         )
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeType(GTRecipeTypes.DUMMY_RECIPES)
@@ -281,13 +281,13 @@ public class StarTSolarMachines {
             Component.translatable("solar.start_core.solar_machine.tooltip1"),
             Component.translatable("solar.start_core.solar_machine.tooltip2"),
             Component.translatable("solar.start_core.solar_machine.tooltip3"),
+            Component.translatable("block.start_core.gap"),
+            Component.translatable("solar.start_core.solar_machine.tooltip7"),
             Component.translatable("block.start_core.breaker_line"),
             Component.translatable("solar.start_core.solar_machine.tooltip4", StarTSolarMachine.getOutputModifier(UHV)),
             Component.translatable("solar.start_core.solar_machine.tooltip5"),
             Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("solar.start_core.solar_machine.tooltip6", "§72500", Component.translatable("material.gtceu.deionized_water")),
-            Component.translatable("block.start_core.breaker_line"),
-            Component.translatable("solar.start_core.solar_machine.tooltip7")
+            Component.translatable("solar.start_core.solar_machine.tooltip6", "§72500", Component.translatable("material.gtceu.deionized_water"))
         )
         .recipeType(GTRecipeTypes.DUMMY_RECIPES)
         .appearanceBlock(() -> StarTMachineUtils.getKjsBlock("enriched_naquadah_machine_casing"))
