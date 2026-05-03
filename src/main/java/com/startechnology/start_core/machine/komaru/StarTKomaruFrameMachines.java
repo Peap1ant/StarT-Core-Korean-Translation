@@ -20,6 +20,9 @@ import com.startechnology.start_core.machine.StarTMachineUtils;
 import com.startechnology.start_core.machine.StarTPartAbility;
 import com.startechnology.start_core.machine.komaru.client.KomaruRenderer;
 import dev.latvian.mods.kubejs.KubeJS;
+import net.minecraft.network.chat.Component;
+
+import java.util.List;
 
 import static com.startechnology.start_core.StarTCore.START_REGISTRATE;
 
@@ -27,6 +30,44 @@ public class StarTKomaruFrameMachines {
     public static final MultiblockMachineDefinition KOMARU = START_REGISTRATE
         .multiblock("komaru", StarTKomaruFrameMachine::new)
         .langValue("Komaru")
+        .tooltips(
+            Component.translatable("block.start_core.komaru.tooltip1")
+        )
+        .paginatedTooltips(List.of(
+            List.of(
+                Component.translatable("block.start_core.komaru.paginated1.1"),
+                Component.empty(),
+                Component.translatable("block.start_core.komaru.paginated1.2")
+            ),
+            List.of(
+                Component.translatable("block.start_core.modular_combustion_frame_d3"),
+                Component.empty(),
+                Component.translatable("block.start_core.komaru.paginated2.1"),
+                Component.translatable("block.start_core.komaru.paginated2.2"),
+                Component.empty(),
+                Component.translatable("block.start_core.komaru.paginated2.3"),
+                Component.translatable("block.start_core.komaru.paginated2.4"),
+                Component.translatable("block.start_core.komaru.paginated2.5"),
+                Component.translatable("block.start_core.komaru.paginated2.6")
+            ),
+            List.of(
+                Component.translatable("block.start_core.komaru.paginated3.1"),
+                Component.translatable("block.start_core.komaru.paginated3.2"),
+                Component.translatable("block.start_core.komaru.paginated3.3"),
+                Component.empty(),
+                Component.translatable("block.start_core.komaru.paginated3.4"),
+                Component.translatable("block.start_core.komaru.paginated3.5"),
+                Component.translatable("block.start_core.komaru.paginated3.6"),
+                Component.translatable("block.start_core.komaru.paginated3.7")
+            ),
+            List.of(
+                Component.translatable("block.start_core.komaru.paginated4.1"),
+                Component.translatable("block.start_core.komaru.paginated4.2"),
+                Component.translatable("block.start_core.komaru.paginated4.3"),
+                Component.translatable("block.start_core.komaru.paginated4.4"),
+                Component.translatable("block.start_core.komaru.paginated4.5")
+            )
+        ))
         .rotationState(RotationState.NON_Y_AXIS)
         .allowExtendedFacing(false)
         .recipeType(GTRecipeTypes.DUMMY_RECIPES)
