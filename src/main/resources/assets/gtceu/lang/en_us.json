@@ -13,5 +13,6 @@
   "gtceu.modifier.bulk_processing.description.2": "  §7Will not bulk if it does not have enough inputs",
   "gtceu.modifier.throughput_boosting.name": "%sThroughput Boosting:",
   "gtceu.modifier.throughput_boosting.description.0": "  §7The machine can run by default with 4 parallels",
-  "gtceu.modifier.throughput_boosting.description.1": "  §7The duration of the recipe is increased 1.6x and EU/t 0.95x"
+  "gtceu.modifier.throughput_boosting.description.1": "  §7The duration of the recipe is increased 1.6x and EU/t 0.95x",
+  "gtceu.modifier.reflector_fusion_reactor.name": "Reflector Fusion Reactor:"
 }

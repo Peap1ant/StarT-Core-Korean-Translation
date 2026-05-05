@@ -276,7 +276,7 @@ public class StarTFusionMachines {
 
         if (aux) {
             builder
-                .recipeModifiers(GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT, ReflectorFusionReactorMachine::recipeModifier, StarTRecipeModifiers.ABSOLUTE_PARALLEL, GTRecipeModifiers.BATCH_MODE)
+                .recipeModifiers(GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT, StarTRecipeModifiers.REFLECTOR_FUSION_REACTOR, StarTRecipeModifiers.ABSOLUTE_PARALLEL, GTRecipeModifiers.BATCH_MODE)
                 .tooltips(
                     Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.line"),
                     Component.translatable("start_core.machine.auxiliary_boosted_fusion_reactor.description"),
@@ -300,7 +300,7 @@ public class StarTFusionMachines {
 
         } else {
             builder
-                .recipeModifiers(GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT, ReflectorFusionReactorMachine::recipeModifier, GTRecipeModifiers.BATCH_MODE)
+                .recipeModifiers(GTRecipeModifiers.DEFAULT_ENVIRONMENT_REQUIREMENT, StarTRecipeModifiers.REFLECTOR_FUSION_REACTOR, GTRecipeModifiers.BATCH_MODE)
                 .tooltips(
                     Component.translatable("gtceu.machine.fusion_reactor.capacity",
                         ReflectorFusionReactorMachine.calculateEnergyStorageFactor(tier, 16) / 1000000L),
