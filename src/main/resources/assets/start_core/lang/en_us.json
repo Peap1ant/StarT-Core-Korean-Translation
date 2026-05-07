@@ -776,7 +776,37 @@
   "block.start_core.uv_solar_array": "UV Solar Array",
   "block.start_core.uhv_solar_array": "UHV Solar Array",
 
-  "block.start_core.solar_multiblock_line": "§lPhotovoltaic Energy Production",
+  "block.start_core.solar_machine.tooltip0": "§lPhotovoltaic Energy Production",
+  "block.start_core.solar_machine.tooltip1": "§7Harvesting the power of the §eSUN§7 by using §fSolar Cells§7. This machine will add the power production of all attached cells and replace broken cells when they decay by having you input new cells into the machine.",
+  "block.start_core.solar_machine.tooltip2": "§fSolar Cells§7 will only produce power if there are no solid blocks above them and it is day.",
+
+  "block.start_core.solar_machine.paginated1.1": "§a§lVoltage multiplier:§f x%s",
+  "block.start_core.solar_machine.paginated1.2": "§7Total EU/t gets multiplied by this factor.",
+
+  "block.start_core.solar_machine.paginated1.3": "§c§lSolar Cell Decay",
+  "block.start_core.solar_machine.paginated1.4": "§7Every 6 seconds this machine will run a cycle during which every cell will lose 1 durability. This durability loss in increased by §4Overheat§7.",
+  "block.start_core.solar_machine.paginated2.1": "§4§lOverheat",
+  "block.start_core.solar_machine.paginated2.2": "§7Each cell has its own max temperature in Kelvin. All cells cannot drop below §f273K§7.",
+  "block.start_core.solar_machine.paginated2.3": "§4Overheat§f%§7 = §f[Current Temperature - 273]§7 / §f[Max Temperature - 273]",
+  "block.start_core.solar_machine.paginated2.4": "§7Based on the §4overheat§f%§7 durability lose per cycle is increased. This represents threshholds and their associated losses.",
+  "block.start_core.solar_machine.paginated2.5": "    §f<75%§7 = 1x Durability loss",
+  "block.start_core.solar_machine.paginated2.6": "    §f<85%§7 = 2x Durability loss",
+  "block.start_core.solar_machine.paginated2.7": "    §f<95%§7 = 4x Durability loss",
+  "block.start_core.solar_machine.paginated2.8": "    §f>95%§7 = 8x Durability loss",
+
+  "block.start_core.solar_panel.paginated1.1": "§e§lSolar Cell Thermodynamics",
+  "block.start_core.solar_panel.paginated1.2": "§7Each cell will increase its temperature by §f0.2K§7 per 6 second cycle while producing power.",
+  "block.start_core.solar_panel.paginated1.3": "§7Each cell will decrease its temperature by §f0.1K§7 per 6 second cycle while inactive.",
+
+  "block.start_core.solar_array.paginated1.1": "§e§lSolar Cell Thermodynamics",
+  "block.start_core.solar_array.paginated1.2": "§7Each cell will increase its temperature by §f0.3K§7 per 6 second cycle while producing power.",
+  "block.start_core.solar_array.paginated1.3": "§7Each cell will decrease its temperature by §f0.1K§7 per 6 second cycle while inactive.",
+
+  "block.start_core.solar_array.paginated2.1": "§3§lArray Cooling",
+  "block.start_core.solar_array.paginated2.2": "§7By providing %s of §f%s§7 every hour the array enters a cooled state.",
+  "block.start_core.solar_array.paginated2.3": "§7While cooled thermodynamics are adjusted.",
+  "block.start_core.solar_array.paginated2.4": "§7Each cell will increase its temperature by §f0.25K§7 per 6 second cycle while producing power.",
+  "block.start_core.solar_array.paginated2.5": "§7Each cell will decrease its temperature by §f0.15K§7 per 6 second cycle while inactive.",
 
   "solar.start_core.solar_panel.tooltip1": "§7Produces energy during the day, using the different cells its made out of.",
   "solar.start_core.solar_panel.tooltip2": "§7During the night it cools down the cells.",
