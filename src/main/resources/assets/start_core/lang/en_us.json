@@ -700,13 +700,14 @@
 
   "block.start_core.komaru": "Kaleidoscopically Omnipotent Mystically Ascendant Rift Umbliclus [K.O.M.A.R.U]",
   "block.start_core.komaru.tooltip1": "§6§lModular Gateway of the Heavens",
-  "block.start_core.komaru.paginated1.1": "§7To access the worlds beyond this reality the draconic empires utilized all understanding of technology. From that, Dr.Conic and the surrounding visionaries were able to construct a gateways to heavens beyond their understanding. By utilizing §dFaetic§7 and §5Draconic§7 powers the found fractal like spatial realms which largely stood outside of time and harvested them to fuel their own growth. However... This consumption had a grave cost. For the energies utilized to break into realms beyond, are the same ones that can shatter a world completely and leave it to be consumed by the abyss. Forever marking a world with greed as a reminder of what happens when trying to control powers barely understood.",
+
+  "block.start_core.komaru.paginated1.1": "§7To access the worlds beyond this reality the draconic empires utilized all understanding of technology. From that, Dr.Conic and the surrounding visionaries were able to construct a gateways to heavens beyond their understanding. By honing §dFaetic§7 and §5Draconic§7 powers they were able to find fractal like spatial realms which largely stood outside of time. They harvested them to fuel their own growth... and their greed had a grave cost. For the energies utilized to break into realms beyond, are the same ones that can shatter a world completely and leave it to be consumed by the abyss. Forever marking a world with a reminder of what happens when trying to control powers barely understood.",
   "block.start_core.komaru.paginated1.2": "§7If one is to understand and stabilize these powers then reward, not disaster awaits. Harvesting what the Draconic Empires could never is a blessing and a curse just the same. §kkomaru cat§7 awaits what you decide next.",
 
   "block.start_core.komaru.paginated2.1": "§bModular Overclocking",
   "block.start_core.komaru.paginated2.2": "§7Each §6K.O.M.A.R.U§7 has the ability to store 4 Advanced Modules and 20 Basic Modules. Each Basic Module is overclocked to 1/64th of the amperage input up to §f64§eA§7. Each Advanced Module is overclocked to 1/16th of the amperage input up to §f256§eA§7. To achieve this §6K.O.M.A.R.U§7 accepts §dLaser Hatches§7.",
   "block.start_core.komaru.paginated2.3": "§d§lFaetic Scaling",
-  "block.start_core.komaru.paginated2.4": "§7Compromised of the product of §dFaetic Scaling§7 and and §9Modular Efficiency§7 where:",
+  "block.start_core.komaru.paginated2.4": "§7Compromised of the product of §dFaetic Scaling§7 and §9Modular Efficiency§7 where:",
   "block.start_core.komaru.paginated2.5": "    §dFaetic Scaling§7 = 1.025 ^ ([Number of Basic Modules] + 3 * [Number of Advanced Modules])",
   "block.start_core.komaru.paginated2.6": "    §9Modular Efficiency§7 = 0.99 ^ ([Number of Basic Modules]) * 0.98 ^ ([Number of Advanced Modules])",
 
@@ -714,15 +715,16 @@
   "block.start_core.komaru.paginated3.2": "§7By using higher tiers of filaments you can more effectively stabilize the riftic connection but the frame will consume all available filaments it can per cycle (10s).",
   "block.start_core.komaru.paginated3.3": "    §3Filament Stabilization§7 = (1 - 0.025 * [Tier of Filament]) ^ ([Filaments Available] / 5)",
   "block.start_core.komaru.paginated3.4": "§f§lFaematter Consumption",
-  "block.start_core.komaru.paginated3.5": "§7To enable the modules to run and the riftic connection the frame requires a constant supply of Faematter to run that if unchecked will increase exponentially. The amount of Faematter consumed floors at 10B per cycle and ceilings at 50B per cycle.",
-  "block.start_core.komaru.paginated3.6": "    §fFaematter Consumption§7 = [Consumption of Faematter in Prior Cycle] * §3Filament Stabilization§7 * §dFaetic Scaling",
-  "block.start_core.komaru.paginated3.7": "§7If this is the first cycle the minimum of 10B will be assumed as the prior cycle consumption",
+  "block.start_core.komaru.paginated3.5": "§7To enable the modules to run and the riftic connection the frame requires a constant supply of Faematter to run that if unchecked will increase exponentially.",
+  "block.start_core.komaru.paginated3.6": "§7The amount of Faematter consumed floors at 10B per cycle and ceilings at 50B per cycle.",
+  "block.start_core.komaru.paginated3.7": "    §fFaematter Consumption§7 = [Consumption of Faematter in Prior Cycle] * §3Filament Stabilization§7 * §dFaetic Scaling",
+  "block.start_core.komaru.paginated3.8": "    §7If this is the first cycle the minimum of 10B will be assumed as the prior cycle consumption",
 
   "block.start_core.komaru.paginated4.1": "§4§lDire Consequences",
   "block.start_core.komaru.paginated4.2": "§7The §6K.O.M.A.R.U§7 should not be unchecked as it scales the power it demands by the faematter it consumes.",
-  "block.start_core.komaru.paginated4.3": "- If stabilized you will be awarded power §aefficiency§7.",
-  "block.start_core.komaru.paginated4.4": "- If left unchecked you will face §4dire consequences§7.",
-  "block.start_core.komaru.paginated4.5": "    §ePower Consumption§7 = §fFaematter Consumption§7 / 11",
+  "block.start_core.komaru.paginated4.3": "- §7If stabilized you will be awarded power §aefficiency§7.",
+  "block.start_core.komaru.paginated4.4": "- §7If left unchecked you will face §4dire consequences§7.",
+  "block.start_core.komaru.paginated4.5": "§ePower Consumption§7 = §fFaematter Consumption§7 / 11",
 
   "start_core.machine.komaru.stabilization_unpaid": "KOMARU stabilization payment missing",
   "ui.start_core.komaru.stabilization": "KOMARU Stabilization:",
