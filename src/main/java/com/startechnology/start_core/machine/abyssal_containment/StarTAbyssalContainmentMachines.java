@@ -35,8 +35,7 @@ public class StarTAbyssalContainmentMachines {
             Component.translatable("start_core.abyssal_containment_room.acr2"),
             Component.translatable("block.start_core.breaker_line"),
             Component.translatable("start_core.abyssal_containment_room.acr3"),
-            Component.translatable("start_core.abyssal_containment_room.acr4"),
-            Component.translatable("block.start_core.breaker_line")
+            Component.translatable("start_core.abyssal_containment_room.acr4")
         )
         .pattern(definition -> FactoryBlockPattern.start()
             .aisle("AAAAAAAAAAAAAAAAA", "A######A#A######A", "A####AA###AA####A", "A###A#######A###A", "A##A#########A##A", "A#A###########A#A", "A#A###########A#A", "AA#############AA", "A###############A", "A###############A", "A###############A", "A###############A", "A###############A", "AA#############AA", "A#A###########A#A", "A#A###########A#A", "A##A#########A##A", "A###A#######A###A", "A####AA###AA####A", "A######A#A######A", "AAAAAAAAAAAAAAAAA") 
