@@ -371,13 +371,15 @@ public class StarTSolarMachine extends WorkableElectricMultiblockMachine impleme
                 setStatus(Status.WORKING);
 
                 isActive = true;
-                progress = (progress + 1) % BASE_UPDATE_INTERVAL;
 
-                if (machine.isDay()) produceEnergy();
 
                 if (progress == 0) {
                     machine.doLogic();
                 }
+
+                progress = (progress + 1) % BASE_UPDATE_INTERVAL;
+
+                if (machine.isDay()) produceEnergy();
             }
         }
 

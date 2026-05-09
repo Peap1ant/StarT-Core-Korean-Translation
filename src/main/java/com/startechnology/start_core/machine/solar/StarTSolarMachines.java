@@ -106,7 +106,6 @@ public class StarTSolarMachines {
 
             return shapes;
         })
-        .blockBuilder(blockBuilder -> blockBuilder.properties(properties -> properties.pushReaction(PushReaction.BLOCK)))
         .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"), StarTCore.resourceLocation("block/solar/overlay/ev"))
         .register();
 
@@ -180,7 +179,6 @@ public class StarTSolarMachines {
 
             return shapes;
         })
-        .blockBuilder(blockBuilder -> blockBuilder.properties(properties -> properties.pushReaction(PushReaction.BLOCK)))
         .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"), StarTCore.resourceLocation("block/solar/overlay/iv"))
         .register();
 
@@ -254,7 +252,6 @@ public class StarTSolarMachines {
 
             return shapes;
         })
-        .blockBuilder(blockBuilder -> blockBuilder.properties(properties -> properties.pushReaction(PushReaction.BLOCK)))
         .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"), StarTCore.resourceLocation("block/solar/overlay/luv"))
         .register();
 
@@ -354,7 +351,6 @@ public class StarTSolarMachines {
 
             return shapes;
         })
-        .blockBuilder(blockBuilder -> blockBuilder.properties(properties -> properties.pushReaction(PushReaction.BLOCK)))
         .workableCasingModel(KubeJS.id("block/casings/naquadah/casing"), StarTCore.resourceLocation("block/solar/overlay/uv"))
         .register();
 
@@ -465,7 +461,6 @@ public class StarTSolarMachines {
 
             return shapes;
         })
-        .blockBuilder(blockBuilder -> blockBuilder.properties(properties -> properties.pushReaction(PushReaction.BLOCK)))
         .workableCasingModel(KubeJS.id("block/casings/naquadah/casing"), StarTCore.resourceLocation("block/solar/overlay/uhv"))
         .register();
 
