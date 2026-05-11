@@ -67,7 +67,7 @@ public class StarTModularCombustionMachines {
     public static final MultiblockMachineDefinition T2_COMBUSTION_MODULE = START_REGISTRATE
             .multiblock("zpm_combustion_module", (holder) -> new ModularCombustionBoosting(holder, ModularCombustionBoosting.T2_COMBUSTION_MODULE, StarTCore.resourceLocation("modular_combustion_frame")))
             .appearanceBlock(() -> StarTMachineUtils.getKjsBlock("enriched_naquadah_turbine_casing"))
-            .langValue("supreme Combustion Module")
+            .langValue("Supreme Combustion Module")
             .tooltips(
                     Component.translatable("block.start_core.t2_combustion_module_description"),
                     Component.translatable("block.start_core.t2_combustion_module_d0",
