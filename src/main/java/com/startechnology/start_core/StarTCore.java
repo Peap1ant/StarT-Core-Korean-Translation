@@ -1,5 +1,7 @@
 package com.startechnology.start_core;
 
+import com.startechnology.start_core.lang.LangHandler;
+import com.tterrag.registrate.providers.ProviderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 import com.startechnology.start_core.item.StarTItems;
@@ -46,17 +48,19 @@ public class StarTCore {
     public static final String MOD_ID = "start_core";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final GTRegistrate START_REGISTRATE = GTRegistrate.create(StarTCore.MOD_ID);
+    @SuppressWarnings("deprecation")
     public static final RandomSource RNG = RandomSource.createThreadSafe();
 
     public static ResourceLocation resourceLocation(String path) {
         return new ResourceLocation(StarTCore.MOD_ID, path);
     }
 
-    public StarTCore() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public StarTCore(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
         StarTCreativeTab.init();
         START_REGISTRATE.creativeModeTab(() -> StarTCreativeTab.START_CORE);
+        START_REGISTRATE.addDataGenerator(ProviderType.LANG, LangHandler::init);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

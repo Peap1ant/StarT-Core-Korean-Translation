@@ -2,6 +2,7 @@ package com.startechnology.start_core.machine.solar;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
+import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
@@ -38,7 +39,7 @@ public class StarTSolarMachines {
 
     public static final MultiblockMachineDefinition SOLAR_PANEL_EV = START_REGISTRATE
         .multiblock("ev_solar_panel", holder -> new StarTSolarMachine(holder, EV))
-        .langValue("EV Solar Panel")
+        .langValue("%s Solar Panel".formatted(GTValues.VNF[EV] + "§r"))
         .tooltips(
             Component.translatable("block.start_core.solar_machine.tooltip0").setStyle(Style.EMPTY.withColor(customGoldColor)),
             Component.translatable("block.start_core.solar_machine.tooltip1"),
@@ -111,7 +112,7 @@ public class StarTSolarMachines {
 
     public static final MultiblockMachineDefinition SOLAR_PANEL_IV = START_REGISTRATE
         .multiblock("iv_solar_panel", holder -> new StarTSolarMachine(holder, IV))
-        .langValue("IV Solar Panel")
+        .langValue("%s Solar Panel".formatted(GTValues.VNF[IV] + "§r "))
         .tooltips(
             Component.translatable("block.start_core.solar_machine.tooltip0").setStyle(Style.EMPTY.withColor(customGoldColor)),
             Component.translatable("block.start_core.solar_machine.tooltip1"),
@@ -184,7 +185,7 @@ public class StarTSolarMachines {
 
     public static final MultiblockMachineDefinition SOLAR_PANEL_LUV = START_REGISTRATE
         .multiblock("luv_solar_panel", holder -> new StarTSolarMachine(holder, LuV))
-        .langValue("LuV Solar Panel")
+        .langValue("%s Solar Panel".formatted(GTValues.VNF[LuV] + "§r "))
         .tooltips(
             Component.translatable("block.start_core.solar_machine.tooltip0").setStyle(Style.EMPTY.withColor(customGoldColor)),
             Component.translatable("block.start_core.solar_machine.tooltip1"),
@@ -257,7 +258,7 @@ public class StarTSolarMachines {
 
     public static final MultiblockMachineDefinition SOLAR_ARRAY_UV = START_REGISTRATE
         .multiblock("uv_solar_array", holder -> new StarTSolarMachine(holder, UV))
-        .langValue("UV Solar Array")
+        .langValue("%s Solar Panel".formatted(GTValues.VNF[UV] + "§r "))
         .tooltips(
             Component.translatable("block.start_core.solar_machine.tooltip0").setStyle(Style.EMPTY.withColor(customGoldColor)),
             Component.translatable("block.start_core.solar_machine.tooltip1"),
@@ -356,7 +357,7 @@ public class StarTSolarMachines {
 
     public static final MultiblockMachineDefinition SOLAR_ARRAY_UHV = START_REGISTRATE
         .multiblock("uhv_solar_array", holder -> new StarTSolarMachine(holder, UHV))
-        .langValue("UHV Solar Array")
+        .langValue("%s Solar Panel".formatted(GTValues.VNF[UHV] + "§r "))
         .tooltips(
             Component.translatable("block.start_core.solar_machine.tooltip0").setStyle(Style.EMPTY.withColor(customGoldColor)),
             Component.translatable("block.start_core.solar_machine.tooltip1"),
