@@ -55,7 +55,7 @@ public class StarTFusionBlocks {
                 .block(casingType.getSerializedName(), p -> new FusionCasingBlock(p, casingType))
                 .lang(langValue)
                 .initialProperties(() -> Blocks.IRON_BLOCK)
-                .properties(properties -> properties.strength(5.0f, 10.0f).sound(SoundType.METAL))
+                .properties(properties -> properties.strength(5.0f, 10.0f).sound(SoundType.METAL).isValidSpawn((state, level, pos, ent) -> false))
                 .addLayer(() -> RenderType::cutoutMipped)
                 .blockstate(createFusionCasingModel(casingType.getSerializedName(), casingType))
                 .tag(GTToolType.WRENCH.harvestTags.get(0), CustomTags.TOOL_TIERS[casingType.getHarvestLevel()])
