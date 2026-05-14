@@ -58,6 +58,8 @@ public class StarTCore {
     public StarTCore(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        StarTConfig.init();
+
         StarTCreativeTab.init();
         START_REGISTRATE.creativeModeTab(() -> StarTCreativeTab.START_CORE);
         START_REGISTRATE.addDataGenerator(ProviderType.LANG, LangHandler::init);
