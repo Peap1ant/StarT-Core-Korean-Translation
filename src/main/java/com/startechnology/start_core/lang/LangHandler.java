@@ -193,7 +193,6 @@ public class LangHandler {
         provider.add("config.jade.plugin_start_core.hellforge_heat_info", "[Star Technology] Hell Forge Crucible Temp");
         provider.add("config.jade.plugin_start_core.abyssal_harvester_info", "[Star Technology] Abyssal Harvester Entropy");
 
-        provider.add("block.start_core.redstone_variadic_interface", "§cRedstone §rVariadic Interface");
         provider.add("start_core.redstone_hatch.d0", "Provides access to redstone indicators for multiblock automation");
         provider.add("start_core.redstone_hatch.d1", "§6Functionality depends on the multiblock to interface with");
         provider.add("start_core.redstone_interface.select", "Select Redstone Indicator");
@@ -252,7 +251,6 @@ public class LangHandler {
 
         provider.add("item.start_core.lucinducer.tooltip1", "§7Copies and applies Dream-Link network information.");
         provider.add("item.start_core.lucinducer.tooltip2", "§7While held offhand, the stored network will be applied to any placed Dream-Link Hatch or Cover.");
-        provider.add("item.start_core.lucinducer", "Lucinducer");
 
         provider.add("item.start_core.mechanical_memory_card.tooltip", "§7Allows you to copy miscellaneous machines information. Supported: ");
         provider.add("item.start_core.mechanical_memory_card.tooltip.supported", " - §b%s");
@@ -442,7 +440,7 @@ public class LangHandler {
         provider.add("block.start_core.solar_machine.paginated2.1", "§4§lOverheat");
         provider.add("block.start_core.solar_machine.paginated2.2", "§7Each cell has its own max temperature in Kelvin. All cells cannot drop below §f273K§7.");
         provider.add("block.start_core.solar_machine.paginated2.3", "§4Overheat§f%§7 = §f[Current Temperature - 273]§7 / §f[Max Temperature - 273]");
-        provider.add("block.start_core.solar_machine.paginated2.4", "§7Based on the §4overheat§f%§7 durability lose per cycle is increased. This represents threshholds and their associated losses.");
+        provider.add("block.start_core.solar_machine.paginated2.4", "§7Based on the §4overheat§f%§7 durability lose per cycle is increased. This represents thresholds and their associated losses.");
         provider.add("block.start_core.solar_machine.paginated2.5", "    §f<75%§7 = 1x Durability loss");
         provider.add("block.start_core.solar_machine.paginated2.6", "    §f<85%§7 = 2x Durability loss");
         provider.add("block.start_core.solar_machine.paginated2.7", "    §f<95%§7 = 4x Durability loss");
