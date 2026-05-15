@@ -130,9 +130,10 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
 
     // client only
     @Getter
-    private int rendererAnimationType = 0;
+    private int rendererAnimationType;
     @Getter
-    private int rendererAnimationTicks = 0;
+    private int rendererAnimationTicks;
+    private int formedStatus = -1;
 
     public StarTKomaruFrameMachine(IMachineBlockEntity holder) {
         super(holder);
@@ -141,14 +142,23 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
     @Override
     public void clientTick() {
         super.clientTick();
-        if (isFormed && rendererAnimationType != 1) {
-            // formed but we are not opening
-            rendererAnimationType = 1;
-            rendererAnimationTicks = -1;
-        } else if (!isFormed && rendererAnimationType != 2) {
-            // not formed but we are not opening
-            rendererAnimationType = 2;
-            rendererAnimationTicks = -1;
+        if (formedStatus == -1) {
+            // start opened or closed
+            formedStatus = isFormed ? 1 : 0;
+            rendererAnimationType = isFormed ? 1 : 2;
+            rendererAnimationTicks = 5 * 20;
+        } else {
+            if (isFormed && formedStatus != 1) {
+                // start open animation
+                rendererAnimationType = 1;
+                rendererAnimationTicks = -1;
+                formedStatus = 1;
+            } else if (!isFormed && formedStatus != 0) {
+                // start closing animation
+                rendererAnimationType = 2;
+                rendererAnimationTicks = -1;
+                formedStatus = 0;
+            }
         }
         rendererAnimationTicks++;
     }
@@ -600,7 +610,7 @@ public class StarTKomaruFrameMachine extends WorkableElectricMultiblockMachine i
     }
 
     private static int getFilamentTier(ItemStack stack) {
-        int[] highestTier = { -1 };
+        int[] highestTier = {-1};
         stack.getTags().forEach(tag -> {
             Matcher matcher = FILAMENT_TAG_PATTERN.matcher(tag.location().toString());
             if (matcher.matches()) {
