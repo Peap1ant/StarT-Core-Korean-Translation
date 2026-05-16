@@ -304,9 +304,10 @@ public class StarTSolarMachine extends WorkableElectricMultiblockMachine impleme
     public void addDisplayText(List<Component> textList) {
         super.addDisplayText(textList);
 
-        textList.remove(1);
 
         if (isFormed) {
+            textList.remove(1);
+            
             if (isActive()) {
                 textList.add(2, Component.translatable("gtceu.multiblock.turbine.energy_per_tick_maxed", FormattingUtil.formatNumbers(euT)));
             }
