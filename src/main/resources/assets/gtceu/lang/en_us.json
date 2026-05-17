@@ -16,7 +16,7 @@
   "gtceu.modifier.fake_fusion_overclock.name": "%sFusion Overclock:",
   "gtceu.modifier.fake_fusion_overclock.description.0": "  §7Unlike most machines Fusion Reactors do not overclock by upgrading the energy hatches on them.",
   "gtceu.modifier.fake_fusion_overclock.description.1": "  §7To overclock Fusion Reactors you instead have to build the next tier.",
-  "gtceu.modifier.fake_fusion_overclock.description.2": "  §7Each overclock doubles the energy cost while halfing the duration. §b[2:2]",
+  "gtceu.modifier.fake_fusion_overclock.description.2": "  §7Each overclock doubles the energy cost while halving the duration. §b[2:2]",
   "gtceu.modifier.fake_fusion_overclock.description.3": "  §7Example Reactors and their Tiers:",
   "gtceu.modifier.fake_fusion_overclock.description.4": "    §fMK1 §7= §dLuV",
   "gtceu.modifier.fake_fusion_overclock.description.5": "    §fMK2 §7= §cZPM",
