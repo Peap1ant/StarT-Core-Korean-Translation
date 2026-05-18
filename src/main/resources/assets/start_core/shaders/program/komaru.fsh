@@ -1,6 +1,5 @@
 #version 330
 
-uniform mat4 GameInvProjMat;
 uniform mat4 GameInvViewRotMat;
 uniform mat4 InvProjViewRotMat;
 uniform vec3 CameraPosition;
@@ -78,8 +77,8 @@ void computeRay() {
     nearPoint /= nearPoint.w;
     farPoint /= farPoint.w;
 
-    ro = CameraPosition;
-    rd = normalize(farPoint.xyz - CameraPosition);
+    ro = nearPoint.xyz + CameraPosition;
+    rd = normalize(farPoint.xyz - nearPoint.xyz);
     cd = normalize(mat3(GameInvViewRotMat) * vec3(0.0, 0.0, -1.0));
     wp = world.xyz;
 }
