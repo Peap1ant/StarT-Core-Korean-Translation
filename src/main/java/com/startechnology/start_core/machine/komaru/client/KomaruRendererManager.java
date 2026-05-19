@@ -45,7 +45,8 @@ public final class KomaruRendererManager {
     public static void onRenderLevelStageEvent(RenderLevelStageEvent event) {
         if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
             if (Minecraft.useShaderTransparency()) {
-                updateKomaruFancyPostEffect();
+                // TODO: readd
+                // updateKomaruFancyPostEffect();
             } else {
                 updateKomaruPostEffect();
             }
@@ -86,7 +87,7 @@ public final class KomaruRendererManager {
 
                 var pass = chain.passes.get(0);
                 var effect = pass.getEffect();
-                fillCommonEffectUniforms(effect);
+                fillCommonEffectUniforms(effect, partialTick);
 
                 for (var machine : COLLECTED_RENDERS) {
                     // TODO: actually save the resulting buffer between renders so we don't clear the stuff
@@ -199,7 +200,7 @@ public final class KomaruRendererManager {
                 var beamOrigin = getBeamOrigin(machine);
                 var effect = pass.getEffect();
 
-                fillCommonEffectUniforms(effect);
+                fillCommonEffectUniforms(effect, partialTick);
                 effect.safeGetUniform("AnimationTicks").set(machine.getRendererAnimationTicks());
                 effect.safeGetUniform("AnimationType").set(machine.getRendererAnimationType());
                 effect.safeGetUniform("BeamOrigin").set(beamOrigin);
@@ -229,10 +230,9 @@ public final class KomaruRendererManager {
         return new Vector3f(centerX, centerY, centerZ);
     }
 
-    private static void fillCommonEffectUniforms(EffectInstance instance) {
+    private static void fillCommonEffectUniforms(EffectInstance instance, float partialTicks) {
         var mc = Minecraft.getInstance();
         var projectionMatrix = RenderSystem.getProjectionMatrix();
-        var invProjectionMatrix = new Matrix4f(projectionMatrix).invert();
         var invViewRotMatrix = new Matrix4f(RenderSystem.getInverseViewRotationMatrix());
         var camera = mc.gameRenderer.getMainCamera();
         var cameraPosition = camera.getPosition().toVector3f();
@@ -243,7 +243,6 @@ public final class KomaruRendererManager {
 
         instance.safeGetUniform("InvProjViewRotMat").set(invProjViewRotMatrix);
         instance.safeGetUniform("GameProjMat").set(projectionMatrix);
-        instance.safeGetUniform("GameInvProjMat").set(invProjectionMatrix);
         instance.safeGetUniform("GameInvViewRotMat").set(invViewRotMatrix);
         instance.safeGetUniform("CameraNearPlane").set(0.05F);
         instance.safeGetUniform("CameraFarPlane").set(mc.gameRenderer.getDepthFar());

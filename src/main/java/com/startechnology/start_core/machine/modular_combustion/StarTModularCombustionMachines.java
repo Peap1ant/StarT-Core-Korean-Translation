@@ -26,7 +26,7 @@ public class StarTModularCombustionMachines {
     public static final MultiblockMachineDefinition T1_COMBUSTION_MODULE = START_REGISTRATE
             .multiblock("luv_combustion_module", (holder) -> new ModularCombustionBoosting(holder, ModularCombustionBoosting.T1_COMBUSTION_MODULE, StarTCore.resourceLocation("modular_combustion_frame")))
             .appearanceBlock(() -> StarTMachineUtils.getKjsBlock("pallaridium_turbine_casing"))
-            .langValue("Unreal Combustion Module")
+            .langValue("Unreal Combustion Module [UCM]")
             .tooltips(
                     Component.translatable("block.start_core.t1_combustion_module_description"),
                     Component.translatable("block.start_core.t1_combustion_module_d0",
@@ -64,7 +64,7 @@ public class StarTModularCombustionMachines {
     public static final MultiblockMachineDefinition T2_COMBUSTION_MODULE = START_REGISTRATE
             .multiblock("zpm_combustion_module", (holder) -> new ModularCombustionBoosting(holder, ModularCombustionBoosting.T2_COMBUSTION_MODULE, StarTCore.resourceLocation("modular_combustion_frame")))
             .appearanceBlock(() -> StarTMachineUtils.getKjsBlock("enriched_naquadah_turbine_casing"))
-            .langValue("Supreme Combustion Module")
+            .langValue("Supreme Combustion Module [SCM]")
             .tooltips(
                     Component.translatable("block.start_core.t2_combustion_module_description"),
                     Component.translatable("block.start_core.t2_combustion_module_d0",
@@ -104,7 +104,7 @@ public class StarTModularCombustionMachines {
     public static final MultiblockMachineDefinition T3_COMBUSTION_MODULE = START_REGISTRATE
             .multiblock("uv_combustion_module", (holder) -> new ModularCombustionBoosting(holder, ModularCombustionBoosting.T3_COMBUSTION_MODULE, StarTCore.resourceLocation("modular_combustion_frame")))
             .appearanceBlock(() -> StarTMachineUtils.getKjsBlock("enriched_naquadah_turbine_casing"))
-            .langValue("Supreme Rocket Module")
+            .langValue("Supreme Rocket Module [SRM]")
             .tooltips(
                     Component.translatable("block.start_core.t1_rocket_module_description"),
                     Component.translatable("block.start_core.t1_rocket_module_d0", FormattingUtil.formatNumbers(GTValues.V[GTValues.UV] *2)),
@@ -142,7 +142,7 @@ public class StarTModularCombustionMachines {
     //T2 Rocket Module
     public static final MultiblockMachineDefinition T4_COMBUSTION_MODULE = START_REGISTRATE
             .multiblock("uev_combustion_module", (holder) -> new ModularCombustionBoosting(holder, ModularCombustionBoosting.T4_COMBUSTION_MODULE, StarTCore.resourceLocation("modular_combustion_frame")))
-            .langValue("Nyinsane Rocket Module")
+            .langValue("Nyinsane Rocket Module [NRM]")
             .tooltips(
                     Component.translatable("block.start_core.t2_rocket_module_description"),
                     Component.translatable("block.start_core.t2_rocket_module_d0",FormattingUtil.formatNumbers(GTValues.V[GTValues.UEV] * 2)),
@@ -179,7 +179,7 @@ public class StarTModularCombustionMachines {
 
     public static final MultiblockMachineDefinition MODULAR_COMBUSTION_FRAME = START_REGISTRATE
             .multiblock("modular_combustion_frame", (holder) -> new ModularFrameBoosting(holder, StarTCore.resourceLocation("uv_combustion_module"),StarTCore.resourceLocation("uev_combustion_module"),StarTCore.resourceLocation("luv_combustion_module"),StarTCore.resourceLocation("zpm_combustion_module")))
-            .langValue("Modular Combustion Frame")
+            .langValue("Modular Combustion Frame [MCF]")
             .tooltips(
                     Component.translatable("block.start_core.modular_combustion_frame_description"),
                     Component.translatable("block.start_core.modular_combustion_frame_d1"),
