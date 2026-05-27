@@ -99,7 +99,7 @@
   "start_core.machine.auxiliary_boosted_fusion_reactor.description": "§7보조 융합 코일을 활용해 융합 반응을 강화하는 고효율 융합 반응로로, 체임버 내에서 반응하는 융합 반응의 밀도를 높일 수 있습니다.",
   "start_core.machine.auxiliary_boosted_fusion_reactor.line": "§c§l병렬 융합",
   "start_core.machine.auxiliary_boosted_fusion_reactor.fusion_info": "§6융합 정보:",
-  "start_core.machine.auxiliary_boosted_fusion_reactor.specific": "§7반응로는 오직 {0} 전력 해치만 사용 가능하며, 각 전력 해치마다 버퍼가 {1}M EU씩 증가합니다.",
+  "start_core.machine.auxiliary_boosted_fusion_reactor.specific": "§7반응로는 오직 {0}§r§7 전력 해치만 사용 가능하며, 각 전력 해치마다 버퍼가 {1}M EU씩 증가합니다.",
   "block.start_core.auxiliary_boosted_fusion_casing_mk1": "보조 강화 융합 케이싱 MK I",
   "block.start_core.auxiliary_boosted_fusion_casing_mk2": "보조 강화 융합 케이싱 MK II",
   "block.start_core.fusion_casing_mk4": "융합 케이싱 MK IV",
