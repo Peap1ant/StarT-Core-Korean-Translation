@@ -872,5 +872,9 @@
   "variadic.start_core.description.solar_machine.temp": "(평균 온도 / %s K) * 15의 값을 0 ~ 15로 고정한 뒤 신호를 방출합니다. (섭씨 온도를 계산하려면, K에서 273을 빼서 구하세요.)",
 
   "variadic.start_core.indicator.solar_machine.broken_cells": "부숴진 태양열 셀",
-  "variadic.start_core.description.solar_machine.broken_cells": "부숴진 태양열 셀의 백분율을 0 ~ 15로 고정한 뒤 신호를 방출합니다."
+  "variadic.start_core.description.solar_machine.broken_cells": "부숴진 태양열 셀의 백분율을 0 ~ 15로 고정한 뒤 신호를 방출합니다.",
+
+  "material.start_core.warm_steam": "따듯한 증기",
+  "material.start_core.hot_steam": "뜨거운 증기",
+  "material.start_core.extremely_hot_steam": "매우 뜨거운 증기"
 }
